@@ -69,8 +69,8 @@ export class BackgroundService {
   }
 
   private showError(message: string) {
-    chr.browserAction.setBadgeBackgroundColor({color: 'red'});
-    chr.browserAction.setBadgeText({text: message});
+    chr.action.setBadgeBackgroundColor({color: 'red'});
+    chr.action.setBadgeText({text: message});
   }
 
   doWork() {

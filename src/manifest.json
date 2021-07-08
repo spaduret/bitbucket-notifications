@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Bitbucket Notifications",
   "version": "0.1",
   "description": "Extension to send notifications for bitbucket pull-request events. Tested on bitbucket server.",
@@ -7,7 +7,7 @@
     "64": "assets/icons/icon64.png",
     "512": "assets/icons/icon512.png"
   },
-  "browser_action": {
+  "action": {
     "default_popup": "index.html"
   },
   "options_ui": {
@@ -15,14 +15,15 @@
     "open_in_tab": true
   },
   "background": {
-    "page": "/index.html#background",
-    "persistent": false
+    "service_worker": "./service-worker.js"
   },
   "permissions": [
     "background",
     "clipboardWrite",
     "alarms",
-    "notifications",
+    "notifications"
+  ],
+  "host_permissions": [
     "https://*/*",
     "https://slack.com/api/*"
   ]

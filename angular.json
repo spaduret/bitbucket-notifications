@@ -24,6 +24,7 @@
               "src/favicon.ico",
               "src/background.png",
               "src/IcoMoon.ttf",
+              "src/service-worker.js",
               "src/manifest.json",
               {
                 "glob": "**/*",

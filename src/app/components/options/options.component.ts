@@ -73,6 +73,13 @@ export class OptionsComponent implements OnInit {
           : undefined;
         this.settingsService.saveExtensionSettings(this.settings);
 
+        if (navigator && navigator.serviceWorker) {
+          navigator.serviceWorker.controller?.postMessage({
+            type: 'settings-saved',
+            settings: this.settings
+          });
+        }
+
         // fetch data
         this.backgroundService.doWork();
 
