@@ -22,7 +22,7 @@ export class BitbucketService {
   validateCredentials(url?: string, token?: string, userSlug?: string): Observable<BitbucketUser> {
     return this.http.get(
       `${url}/rest/api/latest/users/${userSlug}`,
-      {headers: {'Authorisation': `Bearer + ${token}`}})
+      {headers: {'Authorization': `Bearer + ${token}`}})
       .pipe(
         map((data) => data as BitbucketUser)
       );
